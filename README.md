@@ -12,7 +12,6 @@ Un script qui récupère les mots de passe wifi sur un ordinateur Windows et qui
 
 Vous devez remplacer `EMAIL-SENDER` par l'adresse OUTLOOK qui va envoyer le *.zip* et `EMAIL-RECEIVER` par l'adresse mail (n'importe laquelle) qui va le recevoir.
 
----
 
 ### Le script va (dans l'ordre)
 
@@ -32,7 +31,6 @@ A script that grabb wifi passwords on a Windows computer and sends them by email
 
 You need to replace `EMAIL-SENDER` with the OUTLOOK mail address that will send the *.zip* and `EMAIL-RECEIVER` with the email address (any one) that will receive it.
 
----
 
 ### The script will (in order)
 
