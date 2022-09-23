@@ -10,7 +10,7 @@ Choisissez/choose `payload[FR]` ou/or `payload[EN]` !
 
 Un script qui récupère les mots de passe wifi sur un ordinateur Windows et qui les envoie par mail.
 
-Vous devez remplacer `EMAIL-SENDER` par l'adresse OUTLOOK qui va envoyer le *.zip* et `EMAIL-RECEIVER` par l'adresse mail (n'importe laquelle) qui va le recevoir.
+Vous devez remplacer `EMAIL-SENDER` par l'adresse OUTLOOK qui va envoyer le *.zip*, `PASSWORD` par le mot de passe de l'adresse Outlook et `EMAIL-RECEIVER` par l'adresse mail (n'importe laquelle) qui va recevoir le fichier.
 
 ### Le script va (dans l'ordre)
 
@@ -30,7 +30,7 @@ Basé sur le script de @norepository
 
 A script that grabb wifi passwords on a Windows computer and sends them by email.
 
-You need to replace `EMAIL-SENDER` with the OUTLOOK mail address that will send the *.zip* and `EMAIL-RECEIVER` with the email address (any one) that will receive it.
+You must replace `EMAIL-SENDER` with the OUTLOOK address that will send the *.zip*, `PASSWORD` with the password of the Outlook address and `EMAIL-RECEIVER` with the email address (any one) that will receive the file.
 
 ### The script will (in order)
 

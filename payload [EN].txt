@@ -35,7 +35,7 @@ STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
 ENTER
 STRING $SMTPInfo.EnableSsl = $true
 ENTER
-STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('EMAIL-SENDER', 'M9ifz%28Kd')
+STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('EMAIL-SENDER', 'PASSWORD')
 ENTER
 STRING $ReportEmail = New-Object System.Net.Mail.MailMessage
 ENTER
